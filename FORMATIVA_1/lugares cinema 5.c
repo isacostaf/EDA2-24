@@ -59,6 +59,19 @@ int main(){
         }
     }
 
+    // funciona
+
+    for(int j = 1; j < colunas; j++){
+
+        /// faca a primeira coluna ter as letras a, b,c,d... debaixo pra cima
+
+        char letra = 'A' + (fileiras - 1 - j); // Determina a letra para a fileira
+        v[j][0][0] = letra; // A primeira posição da coluna 0 armazena a letra
+        v[j][0][1] = ' '; // Espaço em branco
+
+    }
+    
+
 
     ///////////// PRINT ////////////
     for (int i = 0; i < fileiras; i++) {
