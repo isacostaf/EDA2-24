@@ -30,25 +30,22 @@ int main(){
     char letra_lugar;
     int num_lugar;
 
-    scanf(" %c%d", &letra_lugar, &num_lugar);
+    while(scanf(" %c%d", &letra_lugar, &num_lugar)!= EOF){
 
-    ///// funciona
+        int ascii;
+        ascii = letra_lugar;
 
-    int ascii;
-    ascii = letra_lugar;
+        int pos;
+        pos = 65 - ascii + f;
 
-    printf("%d\n", ascii);
+        strcpy(v[pos][num_lugar], "XX");
 
-    ///// funciona
+    }
+    
 
-    int pos;
-    pos = 65 - ascii + f;
+    /// FUNCIONA
 
-    printf("pos: %d\n", pos);
 
-    ////// funciona
-
-    strcpy(v[pos][num_lugar], "XX");
 
     ///////////// PRINT ////////////
     for (int i = 0; i < fileiras; i++) {
