@@ -22,6 +22,11 @@ int main(){
 
     for(int i = 0; i < entrada; i++){
         if(v[i] > media){
+
+            if(encontrou){
+                printf(" ");
+            }
+
             printf("%d", v[i]);
             encontrou = 1;
         }
