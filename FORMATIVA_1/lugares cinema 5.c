@@ -44,7 +44,22 @@ int main(){
     
     ////// FUNCIONA
 
-    
+    // espacinho do comeco
+    strcpy(v[0][0], "  ");
+
+    // adicinando os numeros da coluna
+    for(int j = 1; j < fileiras; j++){
+
+        if(j < 10){ // se a coluna for menor q 10
+            v[0][j][0] = '0'; // o primeiro digito vai ser sempre 0
+            v[0][j][1] = j + '0'; // o segundo vai ser ele mesmo
+        } else {
+            v[0][j][0] = (j / 10) + '0';
+            v[0][j][1] = (j % 10) + '0';
+        }
+    }
+
+
     ///////////// PRINT ////////////
     for (int i = 0; i < fileiras; i++) {
         for (int j = 0; j < colunas; j++) {
