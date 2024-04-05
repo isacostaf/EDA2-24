@@ -42,11 +42,9 @@ int main(){
 
     }
     
+    ////// FUNCIONA
 
-    /// FUNCIONA
-
-
-
+    
     ///////////// PRINT ////////////
     for (int i = 0; i < fileiras; i++) {
         for (int j = 0; j < colunas; j++) {
