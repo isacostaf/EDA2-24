@@ -8,9 +8,6 @@ int main(){
 
     scanf("%s %s", she, raj);
 
-    printf("A primeira string é: %s\n", she);
-    printf("A segunda string é: %s\n", raj);
-
     //funciona ate aqui
 
     //comparamos
@@ -21,36 +18,11 @@ int main(){
         
         //she vencendo
         //tesoura vence
-        if((strcmp(she, "tesoura") == 0) && ((strcmp(raj, "papel") == 0)||(strcmp(raj, "lagarto") == 0))){
-
+        if(((strcmp(she, "tesoura") == 0) && ((strcmp(raj, "papel") == 0)||(strcmp(raj, "lagarto") == 0)))||((strcmp(she, "papel") == 0) && ((strcmp(raj, "pedra") == 0)||(strcmp(raj, "Spock") == 0)))||((strcmp(she, "pedra") == 0) && ((strcmp(raj, "tesoura") == 0)||(strcmp(raj, "lagarto") == 0)))||((strcmp(she, "lagarto") == 0) && ((strcmp(raj, "Spock") == 0)||(strcmp(raj, "papel") == 0)))||((strcmp(she, "Spock") == 0) && ((strcmp(raj, "tesoura") == 0)||(strcmp(raj, "pedra") == 0)))){
+            printf("Bazinga!\n");
+        }else{
+            printf("Raj trapaceou!\n");
         }
-        //papel vence
-        if((strcmp(she, "papel") == 0) && ((strcmp(raj, "pedra") == 0)||(strcmp(raj, "Spock") == 0))){
-            
-        }
-        //pedra vence
-        if((strcmp(she, "pedra") == 0) && ((strcmp(raj, "tesoura") == 0)||(strcmp(raj, "lagarto") == 0))){
-            
-        }
-        //lagarto vence
-        if((strcmp(she, "lagarto") == 0) && ((strcmp(raj, "Spock") == 0)||(strcmp(raj, "papel") == 0))){
-            
-        }
-        //spock vence
-        if((strcmp(she, "Spock") == 0) && ((strcmp(raj, "tesoura") == 0)||(strcmp(raj, "pedra") == 0))){
-            
-        }
-
-        //raj vencendo
-
-
-
-
-
-
-
-
-
     }
 
 

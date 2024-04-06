@@ -14,35 +14,15 @@ int main(){
     fileiras = f + 1;
     colunas = c + 1;
 
-    // cria matriz
-    char v[fileiras][colunas][3];
+    // Alocação dinâmica da matriz
+    char (*v)[colunas][3] = malloc(fileiras * sizeof(*v));
 
     // preenche tudo com --
-
     for(int i = 0; i < fileiras; i++){
         for(int j = 0; j < colunas; j++){
             strcpy(v[i][j], "--");
         }
     }
-
-    ////// funciona
-
-    char letra_lugar;
-    int num_lugar;
-
-    while(scanf(" %c%d", &letra_lugar, &num_lugar)!= EOF){
-
-        int ascii;
-        ascii = letra_lugar;
-
-        int pos;
-        pos = 65 - ascii + f;
-
-        strcpy(v[pos][num_lugar], "XX");
-
-    }
-    
-    ////// FUNCIONA
 
     // espacinho do comeco
     strcpy(v[0][0], "  ");
@@ -59,28 +39,34 @@ int main(){
         }
     }
 
-    // funciona
+    // faca a primeira coluna ter as letras a, b,c,d... debaixo pra cima
+    for(int i = 1; i < fileiras; i++) {
+        char letra = 'A' + (fileiras - 1 - i); // Determina a letra para a fileira
+        v[i][0][0] = letra; // A primeira posição da coluna 0 armazena a letra
+        v[i][0][1] = ' '; // Espaço em branco
+    }
 
-    for(int j = 1; j < colunas; j++){
+    char letra_lugar;
+    int num_lugar;
 
-        /// faca a primeira coluna ter as letras a, b,c,d... debaixo pra cima
+    while(scanf(" %c%d", &letra_lugar, &num_lugar)!= EOF){
 
-        char letra = 'A' + (fileiras - 1 - j); // Determina a letra para a fileira
-        v[j][0][0] = letra; // A primeira posição da coluna 0 armazena a letra
-        v[j][0][1] = ' '; // Espaço em branco
+        int pos_letra = fileiras - (letra_lugar - 'A') - 1;
+        int pos_numero = num_lugar;
 
+        strcpy(v[pos_letra][pos_numero], "XX");
     }
     
-
-
-    ///////////// PRINT ////////////
+    // Impressão da matriz
     for (int i = 0; i < fileiras; i++) {
         for (int j = 0; j < colunas; j++) {
             printf("%s\t", v[i][j]);
         }
         printf("\n");
-
     }
+
+    // Liberar memória
+    free(v);
 
     return 0;
 }
